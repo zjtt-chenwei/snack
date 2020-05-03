@@ -109,6 +109,6 @@ let users = [
     'yyzzURL': require('../assets/logo.png'), // 营业执照照片
     'examine': 2, // 判断该账户是否有权限进入下一级页面 2无权
   },
-]
+];
 
 export default users
