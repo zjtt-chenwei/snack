@@ -100,18 +100,22 @@ export default {
   },
   created() {
       this.parentMenu = JSON.parse(this.$session.getStore("resource"))
+      console.log(this.parentMenu);
       this.parentActiveName = this.$session.getStore('parentActiveName')
       this.childMenu = JSON.parse(this.$session.getStore('childMenu'))
       this.childActiveName = this.$session.getStore('childActiveName')
+      console.log(this.childMenu);
       this.loginUser = JSON.parse(this.$session.getStore('loginUser'))
   },
   methods: {
       changeParent(name) {
         this.$session.setStore('parentActiveName', name)
         if(name === 'userManage') {
-            this.childMenu = this.parentMenu[0].children
-        } else if(name === 'shopManage'){
-            this.childMenu = this.parentMenu[1].children
+          this.childMenu = this.parentMenu[0].children
+        } else if(name === 'shopManage') {
+          this.childMenu = this.parentMenu[1].children
+        } else if(name === 'orderManage') {
+          this.childMenu = this.parentMenu[2].children
         }
         this.$session.setStore('childMenu', this.childMenu)
         this.$router.push({path: '/'+this.childMenu[0].name})

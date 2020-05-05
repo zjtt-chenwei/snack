@@ -50,6 +50,11 @@ export default new Router({
           component: resolve => require(['../views/business/shopManage.vue'], resolve)
         },
         {
+          path: '/orderReview',
+          name: 'orderReview',
+          component: resolve => require(['../views/admin/orderReview.vue'], resolve)
+        },
+        {
           path: '/orderManage',
           name: 'orderManage',
           component: resolve => require(['../views/business/orderManage.vue'], resolve)

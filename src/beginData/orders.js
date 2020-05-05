@@ -8,7 +8,8 @@ let orders = [
     shopId: 2, // 商品id
     shopName: '香肠', // 商品名称
     shopNum: 10, // 订单商品数量
-    shopPrice: 2.00 // 订单商品价格
+    shopPrice: 2.00, // 订单商品价格
+    status: 0 // 订单状态  0 进行中  1已付款  2交易中  3已结束
   }
 ]
 export default orders;

@@ -1,17 +1,17 @@
 // The Vue build version to load with the `import` command
 // (runtime-only or standalone) has been set in webpack.base.conf with an alias.
 import Vue from 'vue'
-import Vuex from 'vuex';
+import Vuex from 'vuex'
 import App from './App'
 import router from './router'
-import ViewUI from 'view-design';
+import ViewUI from 'view-design'
 import storage from '@/common/storage'
 import localStorage from './common/localStorage'
 import beginUser from './beginData/users.js'
 import beginShop from './beginData/shops'
-
+import beginOrder from './beginData/orders'
 // import style
-import 'view-design/dist/styles/iview.css';
+import 'view-design/dist/styles/iview.css'
 
 Vue.use(ViewUI);
 Vue.use(Vuex);
@@ -27,6 +27,7 @@ new Vue({
   created() {
     let users = localStorage.getStore("users")
     let shops = localStorage.getStore("shops")
+    let orders = localStorage.getStore("orders")
     if (!users) {
       localStorage.setStore("users", JSON.stringify(beginUser))
     }
@@ -43,25 +44,35 @@ new Vue({
       })
       localStorage.setStore("shops", JSON.stringify(shopList))
     }
-
+    if (!orders) {
+      localStorage.setStore("orders", JSON.stringify(beginOrder))
+    }
     let resourcesAdmin = [
-        {
-          id: "0",
-          title: "用户管理",
-          name: "userManage",
-          children: [
-            {id: "0", name: "users", title: "用户管理"},
-          ]
-        },
-        {
-          id: "1",
-          title: "商品管理",
-          name: "shopManage",
-          children: [
-            {id: "0", name: "shopReview", title: "商品审核"},
-          ]
-        },
-      ]
+      {
+        id: "0",
+        title: "用户管理",
+        name: "userManage",
+        children: [
+          {id: "0", name: "users", title: "用户管理"},
+        ]
+      },
+      {
+        id: "1",
+        title: "商品管理",
+        name: "shopManage",
+        children: [
+          {id: "0", name: "shopReview", title: "商品审核"},
+        ]
+      },
+      {
+        id: "2",
+        title: "订单管理",
+        name: "orderManage",
+        children: [
+          {id: "0", name: "orderReview", title: "订单审核"},
+        ]
+      }
+    ]
     let resourcesCustom = [
       {
         id: "1",
