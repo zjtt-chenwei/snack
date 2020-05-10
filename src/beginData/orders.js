@@ -9,7 +9,8 @@ let orders = [
     shopName: '香肠', // 商品名称
     shopNum: 10, // 订单商品数量
     shopPrice: 2.00, // 订单商品价格
-    status: 0 // 订单状态  0 进行中  1已付款  2交易中  3已结束
+    status: 0, // 订单状态  0已关闭  1交易中  2已付款 3已结束
+    createTime: '2020-05-09 19:54' //订单创建时间
   }
 ]
 export default orders;
